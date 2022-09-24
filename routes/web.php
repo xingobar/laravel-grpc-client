@@ -19,3 +19,6 @@ Route::get('/', function () {
 
 Route::resource('users', 'UsersController')
     ->only(['show', 'index']);
+
+Route::resource('greets','GreetsController')
+    ->only(['index']);
