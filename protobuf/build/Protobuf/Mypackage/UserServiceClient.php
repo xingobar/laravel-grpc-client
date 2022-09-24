@@ -30,4 +30,18 @@ class UserServiceClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * @param \Protobuf\Mypackage\UserRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function getUsers(\Protobuf\Mypackage\UserRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/protobuf.mypackage.UserService/getUsers',
+        $argument,
+        ['\Protobuf\Mypackage\UsersResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

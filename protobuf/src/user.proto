@@ -4,6 +4,7 @@ package protobuf.mypackage;
 
 service UserService {
     rpc getUser(UserRequest) returns(User) {}
+    rpc getUsers(UserRequest) returns(UsersResponse) {}
 }
 
 message UserRequest {
@@ -28,4 +29,8 @@ message User {
         Gender gender = 4;
         string birthday = 5;
     }
+}
+
+message UsersResponse {
+    repeated User users = 1;
 }

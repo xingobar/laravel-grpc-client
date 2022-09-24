@@ -29,4 +29,22 @@ class UsersController extends Controller
 
         return response()->json(json_decode($response->serializeToJsonString()));
     }
+
+    public function index(Request $request)
+    {
+        $client = new UserServiceClient('0.0.0.0:8001', [
+            'credentials' => ChannelCredentials::createInsecure(),
+        ]);
+
+        $userRequest = new UserRequest();
+        $userRequest->setId(intval(1));
+
+        list($users, $status) = $client->getUsers($userRequest)->wait();
+
+        if ($status->code !== \Grpc\STATUS_OK) {
+            return response()->json($status->details);
+        }
+
+        return $users->serializeToJsonString();
+    }
 }
