@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Google\Protobuf\GPBEmpty;
 use Grpc\ChannelCredentials;
 use Illuminate\Http\Request;
 use Protobuf\Greet\GreetRequest;
@@ -15,9 +16,7 @@ class GreetsController extends Controller
             'credentials' => ChannelCredentials::createInsecure(),
         ]);
 
-        $greetRequest = new GreetRequest();
-
-        list($response, $status ) = $client->greet($greetRequest)->wait();
+        list($response, $status ) = $client->greet(new GPBEmpty())->wait();
 
         if ($status->code !== \Grpc\STATUS_OK) {
             return response()->json([

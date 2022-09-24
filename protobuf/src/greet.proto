@@ -2,18 +2,14 @@ syntax = "proto3";
 
 package protobuf.greet;
 
-message User {
-    uint32 id = 1;
-    string name = 2;
-}
+import "src/messages/user.proto";
+import "google/protobuf/empty.proto";
 
 message GreetResponse {
-    User user = 1;
+    protobuf.messages.User user = 1;
 }
-
-message GreetRequest {}
 
 
 service GreetService {
-    rpc greet(GreetRequest) returns(GreetResponse) {}
+    rpc greet(google.protobuf.Empty) returns(GreetResponse) {}
 }

@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class GreetResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.protobuf.greet.User user = 1;</code>
+     * Generated from protobuf field <code>.protobuf.messages.User user = 1;</code>
      */
     protected $user = null;
 
@@ -24,7 +24,7 @@ class GreetResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Protobuf\Greet\User $user
+     *     @type \Protobuf\Messages\User $user
      * }
      */
     public function __construct($data = NULL) {
@@ -33,8 +33,8 @@ class GreetResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.protobuf.greet.User user = 1;</code>
-     * @return \Protobuf\Greet\User|null
+     * Generated from protobuf field <code>.protobuf.messages.User user = 1;</code>
+     * @return \Protobuf\Messages\User|null
      */
     public function getUser()
     {
@@ -52,13 +52,13 @@ class GreetResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.protobuf.greet.User user = 1;</code>
-     * @param \Protobuf\Greet\User $var
+     * Generated from protobuf field <code>.protobuf.messages.User user = 1;</code>
+     * @param \Protobuf\Messages\User $var
      * @return $this
      */
     public function setUser($var)
     {
-        GPBUtil::checkMessage($var, \Protobuf\Greet\User::class);
+        GPBUtil::checkMessage($var, \Protobuf\Messages\User::class);
         $this->user = $var;
 
         return $this;

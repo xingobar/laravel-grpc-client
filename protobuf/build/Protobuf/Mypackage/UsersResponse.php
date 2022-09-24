@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class UsersResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated .protobuf.mypackage.User users = 1;</code>
+     * Generated from protobuf field <code>repeated .protobuf.messages.User users = 1;</code>
      */
     private $users;
 
@@ -24,7 +24,7 @@ class UsersResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Protobuf\Mypackage\User>|\Google\Protobuf\Internal\RepeatedField $users
+     *     @type array<\Protobuf\Messages\User>|\Google\Protobuf\Internal\RepeatedField $users
      * }
      */
     public function __construct($data = NULL) {
@@ -33,7 +33,7 @@ class UsersResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .protobuf.mypackage.User users = 1;</code>
+     * Generated from protobuf field <code>repeated .protobuf.messages.User users = 1;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getUsers()
@@ -42,13 +42,13 @@ class UsersResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .protobuf.mypackage.User users = 1;</code>
-     * @param array<\Protobuf\Mypackage\User>|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .protobuf.messages.User users = 1;</code>
+     * @param array<\Protobuf\Messages\User>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setUsers($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Protobuf\Mypackage\User::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Protobuf\Messages\User::class);
         $this->users = $arr;
 
         return $this;

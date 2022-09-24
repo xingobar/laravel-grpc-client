@@ -26,7 +26,7 @@ class UserServiceClient extends \Grpc\BaseStub {
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/protobuf.mypackage.UserService/getUser',
         $argument,
-        ['\Protobuf\Mypackage\User', 'decode'],
+        ['\Protobuf\Messages\User', 'decode'],
         $metadata, $options);
     }
 

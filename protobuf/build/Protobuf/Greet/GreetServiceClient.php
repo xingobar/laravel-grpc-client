@@ -17,12 +17,12 @@ class GreetServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * @param \Protobuf\Greet\GreetRequest $argument input argument
+     * @param \Google\Protobuf\GPBEmpty $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return \Grpc\UnaryCall
      */
-    public function greet(\Protobuf\Greet\GreetRequest $argument,
+    public function greet(\Google\Protobuf\GPBEmpty $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/protobuf.greet.GreetService/greet',
         $argument,

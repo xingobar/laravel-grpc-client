@@ -2,35 +2,17 @@ syntax = "proto3";
 
 package protobuf.mypackage;
 
+import "src/messages/user.proto";
+
 service UserService {
-    rpc getUser(UserRequest) returns(User) {}
+    rpc getUser(UserRequest) returns(protobuf.messages.User) {}
     rpc getUsers(UserRequest) returns(UsersResponse) {}
 }
 
 message UserRequest {
-    uint32 id=1;
-}
-
-enum Gender {
-    male = 0;
-    female = 1;
-    other = 2;
-}
-
-message User {
     uint32 id = 1;
-    string name = 2;
-    string email = 3;
-    string created_at = 4;
-    string updated_at = 5;
-    message UserProfile {
-        string nickname = 1;
-        string intro = 3;
-        Gender gender = 4;
-        string birthday = 5;
-    }
 }
 
 message UsersResponse {
-    repeated User users = 1;
+    repeated protobuf.messages.User users = 1;
 }
