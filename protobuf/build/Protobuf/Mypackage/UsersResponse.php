@@ -13,10 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class UsersResponse extends \Google\Protobuf\Internal\Message
 {
-    /**
-     * Generated from protobuf field <code>repeated .protobuf.messages.User users = 1;</code>
-     */
-    private $users;
+    protected $response;
 
     /**
      * Constructor.
@@ -24,7 +21,8 @@ class UsersResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Protobuf\Messages\User>|\Google\Protobuf\Internal\RepeatedField $users
+     *     @type \Protobuf\Mypackage\Users $data
+     *     @type \Protobuf\Error\Error $error
      * }
      */
     public function __construct($data = NULL) {
@@ -33,25 +31,65 @@ class UsersResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .protobuf.messages.User users = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * Generated from protobuf field <code>.protobuf.mypackage.Users data = 1;</code>
+     * @return \Protobuf\Mypackage\Users|null
      */
-    public function getUsers()
+    public function getData()
     {
-        return $this->users;
+        return $this->readOneof(1);
+    }
+
+    public function hasData()
+    {
+        return $this->hasOneof(1);
     }
 
     /**
-     * Generated from protobuf field <code>repeated .protobuf.messages.User users = 1;</code>
-     * @param array<\Protobuf\Messages\User>|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>.protobuf.mypackage.Users data = 1;</code>
+     * @param \Protobuf\Mypackage\Users $var
      * @return $this
      */
-    public function setUsers($var)
+    public function setData($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Protobuf\Messages\User::class);
-        $this->users = $arr;
+        GPBUtil::checkMessage($var, \Protobuf\Mypackage\Users::class);
+        $this->writeOneof(1, $var);
 
         return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.protobuf.error.Error error = 2;</code>
+     * @return \Protobuf\Error\Error|null
+     */
+    public function getError()
+    {
+        return $this->readOneof(2);
+    }
+
+    public function hasError()
+    {
+        return $this->hasOneof(2);
+    }
+
+    /**
+     * Generated from protobuf field <code>.protobuf.error.Error error = 2;</code>
+     * @param \Protobuf\Error\Error $var
+     * @return $this
+     */
+    public function setError($var)
+    {
+        GPBUtil::checkMessage($var, \Protobuf\Error\Error::class);
+        $this->writeOneof(2, $var);
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getResponse()
+    {
+        return $this->whichOneof("response");
     }
 
 }

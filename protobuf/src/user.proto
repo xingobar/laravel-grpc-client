@@ -3,6 +3,7 @@ syntax = "proto3";
 package protobuf.mypackage;
 
 import "src/messages/user.proto";
+import "src/messages/error.proto";
 
 service UserService {
     rpc getUser(UserRequest) returns(protobuf.messages.User) {}
@@ -13,6 +14,13 @@ message UserRequest {
     uint32 id = 1;
 }
 
-message UsersResponse {
+message Users {
     repeated protobuf.messages.User users = 1;
+}
+
+message UsersResponse {
+    oneof response {
+        Users data = 1;
+        protobuf.error.Error error = 2;
+    }
 }
